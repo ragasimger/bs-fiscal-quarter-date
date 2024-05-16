@@ -95,11 +95,10 @@ def get_quarter_dates_bs(start_year_bs, end_year_bs):
     temp_year_bs = start_year_bs
     for quarter in range(1, 5):
         start_month = 3 * (quarter - 1) + 4
-        end_month = start_month + 2
         if start_month > 12:
             temp_year_bs = end_year_bs
             start_month = 1
-            end_month = 3
+        end_month = start_month + 2
         start_date_bs = ndt(temp_year_bs, start_month, 1)
         end_date_bs = ndt(temp_year_bs, end_month, _days_in_month(temp_year_bs, end_month))  # Last day of the month
 
@@ -130,3 +129,6 @@ def generate_quarter_dates_bs():
 
 
 a, b = generate_quarter_dates_bs()
+
+print(a)
+print(b)
